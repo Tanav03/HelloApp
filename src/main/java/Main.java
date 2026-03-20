@@ -1,15 +1,12 @@
 public class Main {
   public static void main(String[] args) {
-    String name="World";
     StringBuilder nameBuilder = new StringBuilder();
-    boolean first = true;
-    for (String arg : args) {
-      if (!first) {
-        nameBuilder.append(", ");
-      }
-      nameBuilder.append(arg);
-      first = false;
-      name = nameBuilder.toString();
+    for (String name : args) {
+      nameBuilder.append(name).append(", ");
+    }
+    String name = "World";
+    if (nameBuilder.length() > 0) {
+      name = nameBuilder.substring(0, nameBuilder.length() - 2);
     }
     System.out.println("Hello, "+name+"!");
   }
